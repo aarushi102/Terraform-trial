@@ -1,0 +1,4 @@
+.terraform.locl.hcl/
+.terraform.lock.hcl/
+.terraform./
+.terraform/
