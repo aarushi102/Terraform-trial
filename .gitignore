@@ -1,4 +1,2 @@
-.terraform.locl.hcl./
-.terraform.lock.hcl/
-.terraform./
-.terraform/
+.terraform
+terraform.tfstate
