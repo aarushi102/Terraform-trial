@@ -25,3 +25,17 @@ resource "aws_iam_user" "main" {
   for_each = toset(local.users_data[*].username)
   name = each.value
 }
+
+resource "aws_iam_user_login_profile" "main" {
+  for_each = aws_iam_user.main
+  user = each.value.name
+  password_length = 12
+
+  lifecycle {
+    ignore_changes = [ 
+      password_length,
+      password_reset_required,
+      pgp_key,
+     ]
+  }
+}
